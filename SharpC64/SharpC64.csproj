@@ -1,0 +1,96 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD9152EF-7555-403A-B1DF-12311DD86D5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpC64</RootNamespace>
+    <AssemblyName>SharpC64</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NDEBUG_INSTRUCTIONS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SdlDotNet, Version=4.0.4.0, Culture=neutral, PublicKeyToken=26ad4f7e10c61408">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Graphics\SDL.NET\sdldotnet-4.0.4\bin\assemblies\SdlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SGC.SDL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Rubbish\TestTAO\SGC.SDL\bin\Release\SGC.SDL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tao.Sdl, Version=1.2.10.0, Culture=neutral, PublicKeyToken=9c7a200e36c0094e" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C64.cs" />
+    <Compile Include="C64Display.cs" />
+    <Compile Include="CharFunctions.cs" />
+    <Compile Include="CPUCommon.cs" />
+    <Compile Include="D64Drive.cs" />
+    <Compile Include="DebugLog\Debugger.cs" />
+    <Compile Include="DebugLog\MOS6510Ops.cs" />
+    <Compile Include="DigitalRenderer.cs" />
+    <Compile Include="DigitalRenderer.Data.cs" />
+    <Compile Include="Drive.cs" />
+    <Compile Include="FixPoint.cs" />
+    <Compile Include="Frodo.cs" />
+    <Compile Include="FSDrive.cs" />
+    <Compile Include="HiResTimer.cs" />
+    <Compile Include="IEC.cs" />
+    <Compile Include="Job1541.cs" />
+    <Compile Include="Job1541State.cs" />
+    <Compile Include="MOS6502.EmulateCycle.cs" />
+    <Compile Include="MOS6502State.cs" />
+    <Compile Include="MOS6502_1541.cs" />
+    <Compile Include="MOS6510.cs" />
+    <Compile Include="MOS6510.EmulateCycle.cs" />
+    <Compile Include="MOS6510State.cs" />
+    <Compile Include="MOS6526.cs" />
+    <Compile Include="MOS6526.EmulateCycle.cs" />
+    <Compile Include="MOS6526State.cs" />
+    <Compile Include="MOS6526_1.cs" />
+    <Compile Include="MOS6526_2.cs" />
+    <Compile Include="MOS6569.cs" />
+    <Compile Include="MOS6569.Data.cs" />
+    <Compile Include="MOS6569.EmulateCycle.cs" />
+    <Compile Include="MOS6569State.cs" />
+    <Compile Include="MOS6581.cs" />
+    <Compile Include="MOS6581State.cs" />
+    <Compile Include="Prefs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REU.cs" />
+    <Compile Include="SIDRenderer.cs" />
+    <Compile Include="T64Drive.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

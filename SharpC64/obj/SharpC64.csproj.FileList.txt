@@ -1,0 +1,15 @@
+bin\Debug\SharpC64.dll
+bin\Debug\SharpC64.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\SharpC64.dll
+obj\Debug\SharpC64.pdb
+bin\Debug\SdlDotNet.dll
+bin\Debug\Tao.Sdl.dll
+obj\Release\ResolveAssemblyReference.cache
+bin\Release\SharpC64.dll
+bin\Release\SharpC64.pdb
+bin\Release\SdlDotNet.dll
+obj\Release\SharpC64.dll
+obj\Release\SharpC64.pdb
+bin\Release\SGC.SDL.dll
+bin\Release\SGC.SDL.pdb
