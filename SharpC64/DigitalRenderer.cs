@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
-using SGC.SDL;
+using SdlDotNet;
+//using SGC.SDL;
 
 namespace SharpC64
 {
@@ -279,7 +280,7 @@ namespace SharpC64
 
         void init_sound()
         {
-            audiostream = Audio.OpenAudioStream((int)SAMPLE_FREQ, AudioFormat.Signed16Little, AudioChannels.Mono, (short)sndbufsize);
+            audiostream = Audio.OpenAudioStream((int)SAMPLE_FREQ, AudioFormat.Unsigned16Little, SoundChannel.Mono, (short)sndbufsize);
             Audio.Paused = false;
 
             ready = Audio.AudioStatus == AudioStatus.Playing;
