@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using SdlDotNet;
 
 namespace SharpC64
 {
@@ -111,5 +112,12 @@ namespace SharpC64
 
         C64 _TheC64;
 
+        public void Shutdown()
+        {
+            Console.Out.WriteLine("Fordo: Shutdown");
+
+            Video.Close();
+            Events.QuitApplication();
+        }
     }
 }

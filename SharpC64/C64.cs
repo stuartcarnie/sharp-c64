@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
+using SdlDotNet;
 using SGC;
 
 namespace SharpC64
@@ -101,8 +102,18 @@ namespace SharpC64
             orig_kernal_1d85 = Kernal[0x1d85];
             patch_kernel(GlobalPrefs.ThePrefs.FastReset, GlobalPrefs.ThePrefs.Emul1541Proc);
 
+            Events.Quit += new QuitEventHandler(Events_Quit);
+
             // Start the machine main loop
             MainLoop();
+        }
+
+        void Events_Quit(object sender, QuitEventArgs e)
+        {
+            Console.Out.WriteLine("Quit requested");
+
+            Quit();
+            Events.QuitApplication();
         }
 
         public void Quit()
@@ -527,6 +538,8 @@ namespace SharpC64
 
         void MainLoop()
         {
+            Console.Out.WriteLine("Entering MainLoop");
+
             thread_running = true;
 
             while (!quit_thyself)
@@ -543,6 +556,8 @@ namespace SharpC64
             }
 
             thread_running = false;
+
+            Console.Out.WriteLine("Exiting MainLoop");
         }
 
         void EmulateCyclesWith1541()

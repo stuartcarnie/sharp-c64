@@ -10,8 +10,12 @@ namespace TestHost
     {
         static void Main(string[] args)
         {
+            Console.Out.WriteLine("Starting up");
+
             Frodo frodo = new Frodo();
             frodo.ReadyToRun();
+            frodo.Shutdown();
+            Console.Out.WriteLine("Shutting down");
         }
     }
 }
